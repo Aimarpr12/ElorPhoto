@@ -11,3 +11,8 @@
     cursor: pointer;
     transition: transform 0.3s ease;
 }
+
+#divMainImage{
+    height: 500px; 
+    overflow: hidden;
+}

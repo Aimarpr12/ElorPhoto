@@ -38,7 +38,72 @@
         </div>
     </nav>
 
-
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Listado de Trabajos</h2>
+    
+        <!-- Trabajos por Realizar -->
+        <h3>Trabajos por realizar</h3>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead class="table-light">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Lugar</th>
+                        <th>Tipo de Evento</th>
+                        <th>Fecha</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="trabajosPorRealizar">
+                    <!-- Filas dinámicas -->
+                </tbody>
+            </table>
+        </div>
+    
+        <!-- Trabajos Realizados -->
+        <h3 class="mt-5">Trabajos realizados</h3>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead class="table-light">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Lugar</th>
+                        <th>Fecha</th>
+                        <th>Valoración</th>
+                    </tr>
+                </thead>
+                <tbody id="trabajosRealizados">
+                    <!-- Filas dinámicas -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <!-- Modal para Valoración -->
+    <div class="modal fade" id="valoracionModal" tabindex="-1" aria-labelledby="valoracionModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="valoracionModalLabel">Valora el trabajo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formValoracion">
+                        <label class="form-label">¿Cómo fue el trabajo?</label>
+                        <select id="valoracion" class="form-select" required>
+                            <option value="Estupendo">Estupendo</option>
+                            <option value="Bien">Bien</option>
+                            <option value="Mal">Mal</option>
+                            <option value="Fatal">Fatal</option>
+                        </select>
+                        <button type="submit" class="btn btn-primary mt-3 w-100">Confirmar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <footer class="bg-info text-white fixed-bottom">
         <div class="container py-3 d-flex justify-content-between align-items-center">
             <span>&copy; 2024 ElorFoto</span>
@@ -47,5 +112,6 @@
     </footer>
 
     <script src="js/footer.js"></script>
+    <script type="module" src="js/listadoTrabajos.js"></script>
 </body>
 </html>

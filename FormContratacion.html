@@ -62,7 +62,7 @@
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
                     <div class="input-group mb-3">
-                        <input type="email" class="form-control" placeholder="Email">
+                        <input id="email" type="email" class="form-control" placeholder="Email">
                         <span class="input-group-text">@ejemplo.com</span>
                     </div>
                 </div>
@@ -73,6 +73,25 @@
                     <input type="text" class="form-control" id="telefono" placeholder="Introduce tu teléfono" required>
                 </div>
 
+                <!-- Tipo de Evento -->
+                <div class="mb-3">
+                    <label for="tipoEvento" class="form-label">Tipo de Evento</label>
+                    <select class="form-select" id="tipoEvento" required>
+                        <option value="" selected disabled>Selecciona el tipo de evento</option>
+                        <option value="Bautizo">Bautizo</option>
+                        <option value="Comunión">Comunión</option>
+                        <option value="Boda">Boda</option>
+                        <option value="Fiesta">Fiesta</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+
+                <!-- Especificar otro evento -->
+                <div class="mb-3 d-none" id="otroEventoDiv">
+                    <label for="otroEvento" class="form-label">Especifica el tipo de evento</label>
+                    <input type="text" class="form-control" id="otroEvento" placeholder="Describe el evento">
+                </div>
+                
                 <!-- Lugar -->
                 <div class="mb-3">
                     <label for="lugar" class="form-label">Lugar</label>
@@ -118,7 +137,7 @@
             </div>
         </div>
     </div>
-    <script src="js/formContratacion.js"></script>
+    <script type="module" src="js/formContratacion.js"></script>
     <script src="js/footer.js"></script>
 </body>
 
