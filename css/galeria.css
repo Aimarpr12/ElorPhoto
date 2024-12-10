@@ -1,0 +1,13 @@
+
+/* Dar tamaño a las imagenes pequeñas */
+.img-thumbnail {
+    width: auto;
+    max-width: 100px; 
+}
+
+/* Efecto hover para miniaturas */
+.img-thumbnail:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
