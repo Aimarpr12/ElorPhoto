@@ -5,7 +5,10 @@ $(document).ready(function () {
     function cargarContrataciones() {
         const solicitudes = JSON.parse(localStorage.getItem('formContrataciones')) || [];
         const tabla = $('#tablaContrataciones');
-        tabla.empty();
+
+        if (solicitudes.length > 0) {
+            tabla.empty();
+        }
 
         solicitudes.forEach((solicitudData, index) => {
             const solicitud = Object.assign(new Solicitud(), solicitudData);

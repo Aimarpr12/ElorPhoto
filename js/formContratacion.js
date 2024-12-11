@@ -10,6 +10,15 @@ $(document).ready(function () {
         }
     });
 
+    $('#telefono').on('keypress', function (e) {
+        const charCode = e.which || e.keyCode;
+        const char = String.fromCharCode(charCode);
+
+        if (!/^[0-9]+$/.test(char)) {
+            e.preventDefault();
+        }
+    });
+
     const hoy = new Date();
     const fechaHoy = hoy.toISOString().split('T')[0];
 
@@ -25,51 +34,109 @@ $(document).ready(function () {
 
     $('#eventForm').on('submit', function (e) {
         e.preventDefault();
-        debugger;
+        let isValid = true;
+
+        // Validar campos individuales
         const nombre = $('#nombre').val().trim();
         const apellidos = $('#apellidos').val().trim();
-        const email = $('#email').val();
+        const email = $('#email').val().trim();
         const telefono = $('#telefono').val().trim();
         const lugar = $('#lugar').val().trim();
         const fecha = $('#fecha').val().trim();
-        const tipoEvento = $('#tipoEvento').val().trim();
+        const tipoEvento = $('#tipoEvento').val();
         const otroEvento = $('#otroEvento').val().trim();
 
-        if (!/^\d{9}$/.test(telefono)) {
-            alert('El teléfono debe tener 9 dígitos.');
-            return;
+        // Validación de Nombre
+        if (!nombre) {
+            $('#nombre').addClass('is-invalid');
+            isValid = false;
+        } else {
+            $('#nombre').removeClass('is-invalid');
         }
 
-        if (!nombre || !apellidos || !email || !lugar || !fecha) {
-            alert('Todos los campos son obligatorios.');
-            return;
+        // Validación de Apellidos
+        const apellidoRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+( [a-zA-ZáéíóúÁÉÍÓÚñÑ]+)+$/;
+        if (!apellidoRegex.test(apellidos)) {
+            $('#apellidos').addClass('is-invalid');
+            isValid = false;
+        } else {
+            $('#apellidos').removeClass('is-invalid');
         }
 
+        // Validación de Email
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
-            alert('Por favor, introduce un correo electrónico válido.');
-            return;
+            $('#email').addClass('is-invalid');
+            isValid = false;
+        } else {
+            $('#email').removeClass('is-invalid');
         }
 
-        const nuevaSolicitud = new Solicitud(
-            nombre,
-            apellidos,
-            email,
-            telefono,
-            lugar,
-            fecha,
-            tipoEvento,
-            otroEvento
-        );
+        // Validación de Teléfono
+        if (!/^\d{9}$/.test(telefono)) {
+            $('#telefono').addClass('is-invalid');
+            isValid = false;
+        } else {
+            $('#telefono').removeClass('is-invalid');
+        }
 
-        let contrataciones = JSON.parse(localStorage.getItem('formContrataciones')) || [];
+        // Validación de Tipo de Evento
+        if (!tipoEvento) {
+            $('#tipoEvento').addClass('is-invalid');
+            isValid = false;
+        } else {
+            $('#tipoEvento').removeClass('is-invalid');
+        }
 
-        contrataciones.push(nuevaSolicitud);
-        
-        localStorage.setItem('formContrataciones', JSON.stringify(contrataciones));
+        // Validación de Otro Evento
+        if (tipoEvento === 'Otro' && !otroEvento) {
+            $('#otroEvento').addClass('is-invalid');
+            isValid = false;
+        } else {
+            $('#otroEvento').removeClass('is-invalid');
+        }
 
-        alert('Formulario enviado y guardado correctamente en localStorage.');
+        // Validación de Lugar
+        if (!lugar) {
+            $('#lugar').addClass('is-invalid');
+            isValid = false;
+        } else {
+            $('#lugar').removeClass('is-invalid');
+        }
 
+        // Validación de Fecha
+        if (!fecha) {
+            $('#fecha').addClass('is-invalid');
+            isValid = false;
+        } else {
+            $('#fecha').removeClass('is-invalid');
+        }
+
+        // Si el formulario es válido
+        if (isValid) {
+            const nuevaSolicitud = {
+                nombre,
+                apellidos,
+                email,
+                telefono,
+                lugar,
+                fecha,
+                tipoEvento,
+                otroEvento
+            };
+
+            let contrataciones = JSON.parse(localStorage.getItem('formContrataciones')) || [];
+            contrataciones.push(nuevaSolicitud);
+            localStorage.setItem('formContrataciones', JSON.stringify(contrataciones));
+
+            $('#exampleModal').modal('show');
+            $('#eventForm')[0].reset();
+        }
+    });
+
+    $('#limpiar').on('click', function (e) {
+        debugger;
+        e.preventDefault();
         $('#eventForm')[0].reset();
     });
 });

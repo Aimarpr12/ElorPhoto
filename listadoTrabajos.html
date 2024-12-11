@@ -13,13 +13,14 @@
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="css/footer.css" >
 </head>
-<body>
+<body class="bg-secondary">
     <nav class="navbar navbar-expand-lg bg-info">
         <div class="container-fluid">
             <div class="d-flex align-items-center">
                 <img src="img/logo.png" alt="Logo" width="25" height="25" class="me-2">
-                <a class="navbar-brand mb-0" href="index.html">ElorFoto</a>
+                <a class="navbar-brand mb-0" href="indexPrivado.html">ElorFoto</a>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,44 +40,53 @@
     </nav>
 
     <div class="container mt-5">
-        <h2 class="text-center mb-4">Listado de Trabajos</h2>
-    
-        <!-- Trabajos por Realizar -->
-        <h3>Trabajos por realizar</h3>
-        <div class="table-responsive">
-            <table class="table table-bordered">
-                <thead class="table-light">
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Apellidos</th>
-                        <th>Lugar</th>
-                        <th>Tipo de Evento</th>
-                        <th>Fecha</th>
-                        <th>Acción</th>
-                    </tr>
-                </thead>
-                <tbody id="trabajosPorRealizar">
-                    <!-- Filas dinámicas -->
-                </tbody>
-            </table>
+        
+        <div class="col-md-12 mb-4">
+            <div class="card border-info shadow mb-4">
+                <h5 class="card-header border-info">Listado de Trabajos</h5>
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Apellidos</th>
+                                <th>Lugar</th>
+                                <th>Tipo de Evento</th>
+                                <th>Fecha</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody id="trabajosPorRealizar">
+                            <tr>
+                                <td colspan="6" class="text-center">No se han encontrado datos</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-    
-        <!-- Trabajos Realizados -->
-        <h3 class="mt-5">Trabajos realizados</h3>
-        <div class="table-responsive">
-            <table class="table table-bordered">
-                <thead class="table-light">
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Lugar</th>
-                        <th>Fecha</th>
-                        <th>Valoración</th>
-                    </tr>
-                </thead>
-                <tbody id="trabajosRealizados">
-                    <!-- Filas dinámicas -->
-                </tbody>
-            </table>
+
+        <div class="col-md-12 mb-4">
+            <div class="card border-info shadow mb-4">
+                <h5 class="card-header border-info">Trabajos realizados</h5>
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Lugar</th>
+                                <th>Fecha</th>
+                                <th>Valoración</th>
+                            </tr>
+                        </thead>
+                        <tbody id="trabajosRealizados">
+                            <tr>
+                                <td colspan="4" id="filaVacia" class="text-center">No se han encontrado datos</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
     
@@ -104,7 +114,7 @@
         </div>
     </div>
     
-    <footer class="bg-info text-white fixed-bottom">
+    <footer class="bg-info text-white">
         <div class="container py-3 d-flex justify-content-between align-items-center">
             <span>&copy; 2024 ElorFoto</span>
             <a href="index.html" id="logOut" class="text-white text-decoration-none">Log Out</a>

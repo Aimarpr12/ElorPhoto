@@ -1,4 +1,6 @@
-
+/*
+Esto es para que las imagenes tenga un tamaño fijo por que boostrap lo hace con porcentajes y al ser disitos tamaños las imagnees se lia todo
+*/
 /* Dar tamaño a las imagenes pequeñas */
 .img-thumbnail {
     width: auto;

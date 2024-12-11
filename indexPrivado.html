@@ -10,14 +10,15 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="css/footer.css" >
 </head>
-<body>
+<body class="bg-secondary">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-info">
         <div class="container-fluid">
             <div class="d-flex align-items-center">
                 <img src="img/logo.png" alt="Logo" width="25" height="25" class="me-2">
-                <a class="navbar-brand mb-0" href="index.html">ElorFoto</a>
+                <a class="navbar-brand mb-0" href="indexPrivado.html">ElorFoto</a>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,28 +38,35 @@
     </nav>
 
     <div class="container mt-5">
-        <h2 class="text-center mb-4">Gestión de Contrataciones</h2>
-        <div class="table-responsive">
-            <table class="table table-bordered">
-                <thead class="table-light">
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Apellidos</th>
-                        <th>Email</th>
-                        <th>Teléfono</th>
-                        <th>Lugar</th>
-                        <th>Fecha</th>
-                        <th>Tipo Evento</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody id="tablaContrataciones">
-                </tbody>
-            </table>
+        <div class="col-md-12 mb-4">
+            <div class="card border-info shadow mb-4">
+                <h5 class="card-header border-info">Gestión de Contrataciones</h5>
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Apellidos</th>
+                                <th>Email</th>
+                                <th>Teléfono</th>
+                                <th>Lugar</th>
+                                <th>Fecha</th>
+                                <th>Tipo Evento</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaContrataciones">
+                            <tr>
+                                <td colspan="8" class="text-center">No se han encontrado datos</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 
-    <footer class="bg-info text-white fixed-bottom">
+    <footer class="bg-info text-white">
         <div class="container py-3 d-flex justify-content-between align-items-center">
             <span>&copy; 2024 ElorFoto</span>
             <a href="index.html" id="logOut" class="text-white text-decoration-none">Log Out</a>
