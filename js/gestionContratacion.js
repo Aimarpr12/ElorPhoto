@@ -1,5 +1,5 @@
 
-import Solicitud  from './Solicitud.js'; 
+import Solicitud from './Solicitud.js';
 
 $(document).ready(function () {
     function cargarContrataciones() {
@@ -7,11 +7,11 @@ $(document).ready(function () {
         const tabla = $('#tablaContrataciones');
         /*if (solicitudes.length > 0) {
             }*/
-       tabla.empty();
+        tabla.empty();
 
         solicitudes.forEach((solicitudData, index) => {
             const solicitud = Object.assign(new Solicitud(), solicitudData);
-            var evento = solicitud.tipoEvento == 'Otro' ? solicitud.descEvento : solicitud.tipoEvento
+            var evento = (solicitud.tipoEvento == 'Otro' && solicitud.otroEvento != "" ) ? solicitud.otroEvento : solicitud.tipoEvento
             const fila = `
                 <tr>
                     <td>${solicitud.nombre}</td>
@@ -35,32 +35,32 @@ $(document).ready(function () {
         const index = $(this).data('index');
         let contrataciones = JSON.parse(localStorage.getItem('formContrataciones')) || [];
         let aprobadas = JSON.parse(localStorage.getItem('solicitudesAprobadas')) || [];
-    
+
         const solicitud = contrataciones[index];
-    
+
         aprobadas.push(solicitud);
         localStorage.setItem('solicitudesAprobadas', JSON.stringify(aprobadas));
-    
+
         contrataciones.splice(index, 1);
         localStorage.setItem('formContrataciones', JSON.stringify(contrataciones));
-    
+
         console.log('Solicitud aceptada y movida a la lista de aprobadas:', solicitud);
         cargarContrataciones();
     });
-    
+
 
     $(document).on('click', '.rechazar', function () {
         const index = $(this).data('index');
         let contrataciones = JSON.parse(localStorage.getItem('formContrataciones')) || [];
-    
+
         contrataciones.splice(index, 1);
-    
+
         localStorage.setItem('formContrataciones', JSON.stringify(contrataciones));
-    
+
         console.log(`Solicitud en el índice ${index} rechazada y eliminada.`);
         cargarContrataciones();
     });
-    
+
 
     // Inicializar tabla
     cargarContrataciones();

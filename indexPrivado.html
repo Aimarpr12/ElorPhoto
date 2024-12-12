@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,15 +11,21 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="css/footer.css" >
+    <link rel="stylesheet" href="css/footer.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
 </head>
+
 <body class="bg-secondary">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-info">
         <div class="container-fluid">
             <div class="d-flex align-items-center">
                 <img src="img/logo.png" alt="Logo" width="25" height="25" class="me-2">
-                <a class="navbar-brand mb-0" href="indexPrivado.html">ElorFoto</a>
+                <a class="navbar-brand mb-0" href="indexPrivado.html">
+                    ElorFoto
+                    <i class="bi bi-lock ms-2" title="Zona Privada"></i> <!-- Icono añadido -->
+                </a>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,7 +34,8 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="indexPrivado.html">Gestión de Contrataciones</a>
+                        <a class="nav-link active" aria-current="page" href="indexPrivado.html">Gestión de
+                            Contrataciones</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="listadoTrabajos.html">Listado de trabajos</a>
@@ -72,6 +80,7 @@
             <a href="index.html" id="logOut" class="text-white text-decoration-none">Log Out</a>
         </div>
     </footer>
-    <script type="module"  src="js/gestionContratacion.js"></script>
+    <script type="module" src="js/gestionContratacion.js"></script>
 </body>
+
 </html>

@@ -3,16 +3,16 @@ Este css se usa para que este el footer fixed y si la pagina llega asta abajo se
 Link: https://www.youtube.com/watch?v=IhZJJkovW2U
 */
 
-html{
+html {
     height: 100%;
 }
 
-body{
+body {
     display: flex;
-    flex-direction:  column;
+    flex-direction: column;
     min-height: 100%;
 }
 
-footer{
+footer {
     margin-top: auto;
 }

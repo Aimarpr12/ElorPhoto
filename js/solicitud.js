@@ -20,7 +20,7 @@ class Solicitud {
         this.estado = "rechazado";
     }
 
-    setValoracion(valoracion){
+    setValoracion(valoracion) {
         this.valoracion = valoracion;
     }
 

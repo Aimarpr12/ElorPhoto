@@ -22,12 +22,14 @@ $(document).ready(function () {
     }
 
     trabajosPendientes.forEach((trabajo, index) => {
+      
+      var evento = (trabajo.tipoEvento == 'Otro' && trabajo.otroEvento != "" ) ? trabajo.otroEvento : trabajo.tipoEvento
       const fila = `
                 <tr>
                     <td>${trabajo.nombre}</td>
                     <td>${trabajo.apellidos}</td>
                     <td>${trabajo.lugar}</td>
-                    <td>${trabajo.tipoEvento} ${trabajo.descEvento || ""}</td>
+                    <td>${evento}</td>
                     <td>${trabajo.fecha}</td>
                     <td>
                         <input type="checkbox" class="form-check-input terminar-trabajo" data-index="${index}">

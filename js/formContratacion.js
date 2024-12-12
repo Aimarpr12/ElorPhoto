@@ -1,5 +1,5 @@
 
-import Solicitud  from './Solicitud.js'; 
+import Solicitud from './Solicitud.js';
 $(document).ready(function () {
     $('#nombre, #apellidos').on('keypress', function (e) {
         const charCode = e.which || e.keyCode;
@@ -88,6 +88,7 @@ $(document).ready(function () {
             $('#tipoEvento').removeClass('is-invalid');
         }
 
+        /*
         // Validación de Otro Evento
         if (tipoEvento === 'Otro' && !otroEvento) {
             $('#otroEvento').addClass('is-invalid');
@@ -95,7 +96,7 @@ $(document).ready(function () {
         } else {
             $('#otroEvento').removeClass('is-invalid');
         }
-
+        */
         // Validación de Lugar
         if (!lugar) {
             $('#lugar').addClass('is-invalid');

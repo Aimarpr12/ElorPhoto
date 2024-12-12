@@ -4,7 +4,7 @@ Esto es para que las imagenes tenga un tamaño fijo por que boostrap lo hace con
 /* Dar tamaño a las imagenes pequeñas */
 .img-thumbnail {
     width: auto;
-    max-width: 100px; 
+    max-width: 100px;
 }
 
 /* Efecto hover para miniaturas */
@@ -14,7 +14,20 @@ Esto es para que las imagenes tenga un tamaño fijo por que boostrap lo hace con
     transition: transform 0.3s ease;
 }
 
-#divMainImage{
-    height: 500px; 
+/* Esto es para darle un maximo a las fotos*/
+#divMainImage {
+    height: 500px;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+/* Con esto logramos que ocupen las imagenes todo lo del div*/ 
+#divMainImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
